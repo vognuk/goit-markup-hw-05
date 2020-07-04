@@ -26,6 +26,7 @@
   --input-border-color: rgba(255, 255, 255, 0.3);
   --copy-rights-color: rgba(255, 255, 255, 0.4);
   --contact-color: rgba(255, 255, 255, 0.6);
+  --jumping-text-bgr: rgba(33, 150, 243, 0.9);
   --logo-font: Raleway;
 
   --section-padding: 94px;
@@ -55,6 +56,8 @@ a {
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
+
+  outline: none;
 }
 
 header {
@@ -63,6 +66,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 80px;
+  border: 1px solid #ECECEC;
 }
 
 .logo-container {
@@ -73,14 +77,78 @@ header {
 
 .menu-list {
   display: flex;
-  margin-right: 305px;
+  margin-right: 305px; /*Может стоит сделать марджин через свойства флекс*/
 
   list-style-type: none;
 }
 
 .main-menu-link {
+  position: relative;
   margin-right: 50px;
+  /* display: block; */
 }
+
+/*Trigger of menu underline*/
+.current-page:after {
+  content: '';
+
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--header-blue);
+  left: 0px;
+  bottom: 0px;
+
+  display: block;
+}
+
+.current-page {
+  color: var(--header-blue);
+}
+
+.main-menu-link:hover {
+  color: var(--header-blue);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-menu-link:focus-within {
+  color: var(--header-blue);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* .main-menu-link:hover::after {
+  content: '';
+
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--header-blue);
+  left: 0px;
+  bottom: 0px;
+
+  transform: scaleX(0);
+
+  display: block;
+}
+
+.main-menu-link:focus-within::after {
+  content: '';
+
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--header-blue);
+  left: 0px;
+  bottom: 0px;
+
+  transform: scaleX(0);
+
+  display: block;
+} */
 
 .contacts-list {
   display: flex;
@@ -120,6 +188,12 @@ header {
 
 .contact-link:hover {
   color: var(--header-blue);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:focus-within {
+  color: var(--header-blue);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* svg */
@@ -132,21 +206,12 @@ header {
 
 .contact-link:hover svg {
   fill: var(--header-blue);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Links common styles ----------------------------------- */
-
-/* links underline off */
-.logo-link,
-.main-menu-link,
-.contact-link,
-.instagram-link,
-.twitter-link,
-.facebook-link,
-.linkedin-link,
-.item-link,
-.portfolio-card {
-  text-decoration: none;
+.contact-link:focus-within svg {
+  fill: var(--header-blue);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Contact links */
@@ -227,17 +292,13 @@ header {
   line-height: 38px;
 }
 
-/* Links common efects ------------------------------------*/
+/* Links common styles ------------------------------------*/
 
-/* Items change its color */
-.main-menu-link:hover {
-  color: var(--header-blue);
-}
-
-/* links hover */
-.link-hover .item-link:hover {
+a {
   text-decoration: none;
 }
+
+/* Items change its color */
 
 /* links focus */
 .link-hover:focus
@@ -249,6 +310,8 @@ header {
 .item-link:visited {
   text-decoration: none;
 }
+
+
 
 /* Invisible headers of page boxes ------------------------*/
 .hidden-title {
@@ -355,6 +418,20 @@ header {
   padding-bottom: var(--section-padding);
 }
 
+.container-header {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 .ways-box {
   display: flex;
   flex-direction: row;
@@ -362,6 +439,9 @@ header {
 
 .ways-item {
   position: relative;
+
+  display: flex;
+  align-items: flex-end;
 
   margin-right: 30px;
   width: calc((100% - 30px * 2) / 3);
@@ -374,22 +454,6 @@ header {
 .ways-image {
   width: 100%;
   height: auto;
-}
-
-.container-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.container-header {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 42px;
-  text-align: center;
-  letter-spacing: 0.03em;
-  margin-bottom: 50px;
 }
 
 /* .ways-subtitle {
@@ -534,8 +598,18 @@ header {
   background-color: var(--header-blue);
 }
 
+.team-social-link:focus-within {
+  background-color: var(--header-blue);
+}
+
 .team-social-link:hover svg {
   fill: var(--button-text-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-link:focus-within svg {
+  fill: var(--button-text-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* svg */
@@ -628,10 +702,22 @@ header {
 
 .clients-link:hover {
   border-color: #2196f3;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-link:focus-within {
+  border-color: #2196f3;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover svg {
   fill: #2196f3;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-link:focus-within svg {
+  fill: #2196f3;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Footer. Logo Web Studio styles -------------------------*/
@@ -768,7 +854,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: transparent; */
+  background-color: var(--footer-social-bgr);
   width: 100%;
   height: 100%;
   padding: 0px;
@@ -780,8 +866,19 @@ header {
   background-color: var(--header-blue);
 }
 
+.social-link:focus-within {
+  background-color: var(--header-blue);
+}
+
+
 .social-link:hover svg {
   fill: var(--button-text-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:focus-within svg {
+  fill: var(--button-text-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* svg */
@@ -936,12 +1033,14 @@ header {
   /* text-rendering: auto; */
 }
 
-.menu-link:hover {
+.menu-link:hover,
+.menu-link:focus-within {
   color: var(--button-text-color);
   background: var(--header-blue);
   border: none;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 3px 1px rgba(0, 0, 0, 0.1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --- Portfolio cards---------------------------------- */
@@ -959,7 +1058,8 @@ header {
 }
 
 .portfolio-list-item {
-  width: calc((100% - 30px * 2) / 3);
+  /* width: calc((100% - 30px * 2) / 3); */
+  width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
 
@@ -967,20 +1067,65 @@ header {
   border-color: var(--svg-background-color);
 }
 
-.portfolio-list-item:hover {
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    0px 1px 1px rgba(0, 0, 0, 0.12);
-}
-
-/* .portfolio-card:focus  */
-
 .portfolio-list-item:nth-child(3n) {
   margin-right: 0px;
 }
 
 .portfolio-image {
-  width: 100%;
+     width: 100%;
 }
+
+.portfolio-list-item:hover,
+.portfolio-list-item:focus-within {
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*animation*/
+
+.portfolio-jumping-box {
+  position: relative;
+  display: flex;
+
+  width: 100%;
+
+  overflow: hidden;
+ }
+
+.jumping-text {
+  position: absolute;
+  opacity: 0;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  width: 100%;
+  height: 100%;
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  
+  font-family: Roboto;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 3%;
+  color: var(--button-text-color);
+
+  background-color: var(--jumping-text-bgr);
+  }
+
+.portfolio-jumping-box:hover .jumping-text {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+/* Portfolio animation end */
 
 .card-title {
   margin-top: 20px;
@@ -1030,3 +1175,7 @@ header {
 
 /* 
 - Высоту для контента не использовать, у строчных их нет. */
+
+/*Кнопками при ховере добавить 
+cursor: pointer;
+нижнюю линию в хедер */
