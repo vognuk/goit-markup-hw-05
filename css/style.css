@@ -44,6 +44,15 @@
 
 /* Header menu items ------------------------------------- */
 
+header {
+  position: fixed;
+  z-index: 10;
+  background-color: var(--button-text-color);
+  width: 100%;
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+}
+
 a {
   text-decoration: none;
 }
