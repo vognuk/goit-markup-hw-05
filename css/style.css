@@ -94,9 +94,7 @@ a:visited {
 .container-box {
   display: flex;
   justify-content: space-between;
-  width: 1200px;
-  /* padding-right: 15px;
-  padding-left: 15px; */
+  width: 100%;
  }
 
 
@@ -170,12 +168,21 @@ header {
   position: fixed;
   z-index: 10;
 
-  display: block;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
   width: 100%;
+  /* height: 80px; */
   top: 0px;
 
   background-color: var(--button-text-color);
+  border: 1px solid #ECECEC;
+}
+
+header .container {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
  /* Main menu */
@@ -192,16 +199,6 @@ header {
   letter-spacing: 0.02em;
 
   outline: none;
-}
-
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-
-  border: 1px solid #ECECEC;
 }
 
 .logo-container {
@@ -272,11 +269,11 @@ header > .container {
 /* Main menu contacts */
 
 .header-contacts > li:not(:last-child) {
-  margin-right: 27px;
+  margin-right: 30px;
 }
 
 .contact-link {
-  display: flex;
+  display: inline-flex;
 
   font-family: Roboto;
   font-style: normal;
@@ -292,6 +289,9 @@ header > .container {
 
 .header-number {
   display: block;
+
+  padding: 0px;
+  border: 0px;
 
   margin-top: auto;
   margin-bottom: auto;
@@ -671,15 +671,8 @@ header > .container {
  *
  */
 
-.footer-container {
-  display: flex;
-  justify-content: center;
-  padding-top: var(--section-padding);
-  padding-right: 15px;
-  padding-left: 41px;
-
+footer {
   padding-bottom: var(--section-padding);
-  
   background-color: var(--footer-color);
 }
 
