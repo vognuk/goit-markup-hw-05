@@ -14,59 +14,60 @@
   </head>
   <body>
     <!--main menu container-->
-    <header class="header-line">
-      <div class="logo-container">
-        <a class="logo-link" href="./index.html">
-          <span class="logo-2-2"><span class="logo-1-2">Web</span> Studio</span>
-        </a>
-      </div>
-      <ul class="menu-list">
-        <li>
-          <a class="main-menu-link menu-block link-hover" href="./index.html"
-            >Студия</a
-          >
-        </li>
-        <li>
-          <a
-            class="main-menu-link menu-block link-hover current-page"
-            href="./portfolio.html"
-            >Портфолио</a
-          >
-        </li>
-        <!--Is this link for an anchor?-->
-        <li>
-          <a class="main-menu-link menu-block link-hover" href="">Контакты</a>
-        </li>
-      </ul>
-      <!-- Header contacts -->
-      <ul class="contacts-list">
-        <li class="header-contacts-item menu-block link-hover">
-          <a class="contact-link menu-block" href="mailto:info@example.com"
-            ><svg
-              class="header-icon"
-              width="10px"
-              height="15px"
-              preserveAspectRatio="xMaxYMax meet"
-            >
-              <use href="./images/sprite.svg#icon-contact-envelope"></use>
-            </svg>
-            <span class="header-number">info@devstudio.com</span></a
-          >
-        </li>
-        <li class="header-contacts-item">
-          <a class="contact-link menu-block link-hover" href="tel:+380991111111"
-            ><svg
-              class="header-icon"
-              width="10px"
-              height="15px"
-              preserveAspectRatio="xMaxYMax meet"
-            >
-              <use href="./images/sprite.svg#icon-contact-smartphone"></use>
-            </svg>
-            <span class="header-number">+38 099 111 11 11</span>
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a class="logo-link" href="./index.html">
+            <span class="logo-2-2"><span class="logo-1-2">Web</span> Studio</span>
           </a>
-        </li>
-      </ul>
+        </div>
+        <ul class="header-menu header-pages">
+          <li>
+            <a class="main-menu-link current-page" href="./index.html"
+              >Студия</a
+            >
+          </li>
+          <li>
+            <a
+              class="main-menu-link"
+              href="./portfolio.html"
+              >Портфолио</a
+            >
+          </li>
+          <li>
+            <a class="main-menu-link" href="">Контакты</a>
+          </li>
+        </ul>
+        <!-- Header contacts -->
+        <ul class="header-menu header-contacts">
+          <li>
+            <a class="contact-link" href="mailto:info@devstudio.com"
+              ><svg
+                class="header-icon"
+                width="10px"
+                height="15px"
+                preserveAspectRatio="xMaxYMax meet"
+              >
+                <use href="./images/sprite.svg#icon-contact-envelope"></use>
+              </svg>
+              <span class="header-number">info@devstudio.com</span></a
+            >
+          </li>
+          <li>
+            <a class="contact-link" href="tel:+380991111111"
+              ><svg
+                class="header-icon"
+                width="10px"
+                height="15px"
+                preserveAspectRatio="xMaxYMax meet"
+              >
+                <use href="./images/sprite.svg#icon-contact-smartphone"></use>
+              </svg>
+              <span class="header-number">+38 099 111 11 11</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!--Portfolio container-->
@@ -284,7 +285,7 @@
           </a>
           <address>
             <ul class="contacts-links">
-              <li class="contact-item">
+              <li class="contact-item ">
                 <p class="address-post">
                   г.Киев, пр-т Леси Украинки, 26
                 </p>
@@ -308,53 +309,53 @@
         </div>
         <div class="footer-contacts">
           <span class="footer-subscribe">Присоеденяйтесь</span>
-          <ul class="footer-social-list">
-            <li class="footer-social-item">
-              <a
-                class="social-link"
-                href="https://www.instagram.com/"
-                target="_blank"
-              >
-                <svg class="footer-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-social-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-social-item">
-              <a
-                class="social-link"
-                href="https://twitter.com/"
-                target="_blank"
-              >
-                <svg class="footer-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-social-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-social-item">
-              <a
-                class="social-link"
-                href="https://www.facebook.com/"
-                target="_blank"
-              >
-                <svg class="footer-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-social-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-social-item">
-              <a
-                class="social-link"
-                href="https://www.linkedin.com/"
-                target="_blank"
-              >
-                <svg class="footer-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-social-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+                      <ul class="social-list">
+              <li>
+                <a
+                  class="social-link social-box social-web"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                >
+                  <svg class="footer-icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-social-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social-link social-box social-web"
+                  href="https://twitter.com/"
+                  target="_blank"
+                >
+                  <svg class="footer-icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-social-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social-link social-box social-web"
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                >
+                  <svg class="footer-icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-social-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social-link social-box social-web"
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                >
+                  <svg class="footer-icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-social-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         <!--form for subscribtion-->
         <form class="footer-form">
           <span class="footer-subscribe"
