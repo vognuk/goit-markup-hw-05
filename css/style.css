@@ -68,6 +68,8 @@ a:visited {
 
 .container {
   display: block;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   
   width: 1200px;
   padding-top: var(--section-padding);
@@ -181,6 +183,8 @@ header {
 }
 
 header .container {
+  display: flex;
+  justify-content: space-between;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -206,6 +210,7 @@ header .container {
   margin-right: 85px;
 
   line-height: 80px;
+  white-space: nowrap;
 }
 
 header > .container {
@@ -295,6 +300,7 @@ header > .container {
 
   margin-top: auto;
   margin-bottom: auto;
+  white-space: nowrap;
 }
 
 /* contacts svg */
@@ -672,8 +678,13 @@ header > .container {
  */
 
 footer {
-  padding-bottom: var(--section-padding);
+/* width: auto; */
+  padding-bottom: 60px;
   background-color: var(--footer-color);
+}
+
+footer .container {
+  padding-bottom: 0px;
 }
 
 .footer-axis {
@@ -734,7 +745,7 @@ footer .contact-link {
   width: calc(50% - 15px);
  }
 
-.contact-item {
+.contact-item:not(:last-child) {
   width: 100%;
   padding-bottom: 18px;
 }
